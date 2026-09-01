@@ -1,0 +1,318 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background: #f5f7fb;
+    color: #1f2937;
+
+    padding: 40px 20px;
+}
+
+
+
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+
+    animation: pageLoad 0.7s ease;
+}
+
+
+
+.container > h1 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 30px;
+
+    letter-spacing: -1px;
+}
+
+
+.summary {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 30px;
+}
+
+
+.summary-card {
+    width: 100%;
+    max-width: 350px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.summary-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+.summary-card h3 {
+    font-size: 16px;
+    color: #6b7280;
+
+    margin-bottom: 10px;
+}
+
+
+.summary-card p {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+#expense-form {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    margin-bottom: 40px;
+}
+
+
+#expense-form div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+#expense-form label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+#expense-form input,
+#expense-form select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: white;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+#expense-form input:focus,
+#expense-form select:focus {
+    border-color: #6366f1;
+
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+
+    transform: translateY(-1px);
+}
+
+
+
+#expense-form button {
+    grid-column: 1 / -1;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: #6366f1;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+#expense-form button:hover {
+    background: #4f46e5;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+}
+
+
+#expense-form button:active {
+    transform: scale(0.98);
+}
+
+
+
+.expense-section h2 {
+    margin-bottom: 20px;
+
+    font-size: 24px;
+}
+
+
+
+
+#expense-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+
+
+.expense {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    animation: expenseAppear 0.4s ease;
+}
+
+
+.expense:hover {
+    transform: translateX(5px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+}
+
+
+
+
+@keyframes pageLoad {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes expenseAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+
+    .container > h1 {
+        font-size: 32px;
+    }
+
+
+    #expense-form {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+
+    #expense-form button {
+        grid-column: auto;
+    }
+
+
+    .expense {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+}
+
+#expense-form small{
+    color: #ef4444;
+    font-size: 13px;
+    min-height: 16px;
+}
+
